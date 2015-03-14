@@ -23,7 +23,7 @@ module RPCHandles
 
     def auth userid, password
       auth_info = Rbitter.env['xmlrpc']['auth']
-      if auth_info['id'] == userid and auth_info['password'] == password
+      if auth_info['username'] == userid and auth_info['password'] == password
         token = "#{userid}%45#{userid.hash.abs.to_s}"
         # TODO: Time limit?
         RPCHandles.auth[token] = DateTime.now
