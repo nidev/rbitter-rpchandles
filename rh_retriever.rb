@@ -1,4 +1,6 @@
-require_relative "base"
+# encoding: utf-8
+
+require "rbitter/xmlrpcd/base"
 require "active_record"
 require "date"
 

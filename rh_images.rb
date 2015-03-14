@@ -1,8 +1,7 @@
 # encoding: utf-8
-#
 
 require "base64"
-require_relative "base"
+require "rbitter/xmlrpcd/base"
 
 module RPCHandles
   class ImageHost < BaseHandle::Auth

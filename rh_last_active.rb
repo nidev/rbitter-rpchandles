@@ -1,5 +1,7 @@
+# encoding: utf-8
+
+require "rbitter/xmlrpcd/base"
 require "date"
-require_relative "base"
 
 module RPCHandles
   class LastActiveTime < BaseHandle::Auth
