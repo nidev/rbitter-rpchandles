@@ -18,7 +18,7 @@ module RPCHandles
 
     def keyword word
       resQueue = []
-      res = Rbitter::Record.where("tweet LIKE (?)", "%#{word}%").limit(MAXIMUM_TWEETS)
+      res = Rbitter::Record.where("tweet LIKE (?)", "%#{word}%").order('id DESC').limit(MAXIMUM_TWEETS)
       if not res.nil? and res.length > 0
         resQueue += relations_to_strings(res)
       end
@@ -40,7 +40,7 @@ module RPCHandles
         user.gsub!(/@/, "")
       end
 
-      res = Rbitter::Record.where("username = ?", user).limit(MAXIMUM_TWEETS)
+      res = Rbitter::Record.where("username = ?", user).order('id DESC').limit(MAXIMUM_TWEETS)
       if not res.nil? and res.length > 0
         resQueue += relations_to_strings(res)
       end
