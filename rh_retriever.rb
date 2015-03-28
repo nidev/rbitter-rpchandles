@@ -27,7 +27,7 @@ module RPCHandles
 
     def retweets
       resQueue = []
-      res = Rbitter::Record.where("rt_count > 0").limit(MAXIMUM_TWEETS)
+      res = Rbitter::Record.where("rt_count > 0").order('id DESC').limit(MAXIMUM_TWEETS)
       if not res.nil? and res.length > 0
         resQueue += relations_to_strings(res)
       end
