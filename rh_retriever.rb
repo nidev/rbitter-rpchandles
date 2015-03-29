@@ -22,7 +22,7 @@ module RPCHandles
       if not res.nil? and res.length > 0
         resQueue += relations_to_strings(res)
       end
-      resQueue
+      resQueue.reverse
     end
 
     def retweets
@@ -31,7 +31,7 @@ module RPCHandles
       if not res.nil? and res.length > 0
         resQueue += relations_to_strings(res)
       end
-      resQueue
+      resQueue.reverse
     end
 
     def username user
@@ -44,7 +44,7 @@ module RPCHandles
       if not res.nil? and res.length > 0
         resQueue += relations_to_strings(res)
       end
-      resQueue
+      resQueue.reverse
     end
 
     def between from_DateTime, to_DateTime
